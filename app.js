@@ -205,16 +205,16 @@ app.use("/",userRouter);
 //   res.send("successful testing");
 // });
 
-app.all(/.*/,(req,res,next)=>{
-    next(new ExpressError(404,"Page Not Found"));
-});
+// app.all(/.*/,(req,res,next)=>{
+//     next(new ExpressError(404,"Page Not Found"));
+// });
 
-app.use((err,req,res,next)=>{
-  // let {statusCode,message} = err;
-  const { statusCode = 500, message = "Something went wrong" } = err;
-  res.status(statusCode).render("error.ejs",{message});
-  //res.status(statusCode).send(message);
-});
+// app.use((err,req,res,next)=>{
+//   // let {statusCode,message} = err;
+//   const { statusCode = 500, message = "Something went wrong" } = err;
+//   res.status(statusCode).render("error.ejs",{message});
+//   //res.status(statusCode).send(message);
+// });
 
 app.listen(8080, () => {
   console.log("server is listening to port 8080");
