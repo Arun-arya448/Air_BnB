@@ -1,0 +1,101 @@
+<% layout("/layouts/boilerplate")%>
+  <style>
+    #filters{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .filter{
+      text-align: center;
+      margin-right: 2.5rem;
+      margin-left: 2.5rem;
+      margin-top: 2rem;
+      opacity: 0.7;
+    }
+    .filter:hover{
+      opacity: 1;
+      cursor: pointer;
+    }
+    .size{
+      font-size: 1.8rem;
+      color: black;       
+      text-decoration: none; 
+    }
+    .size:hover {
+      color: #fe424d;  
+    }
+
+  </style>
+
+
+  <div id="filters">
+    <div class="filter">
+      <a class="size" href="/category/trending"><i class="fa-solid fa-fire"></i></a>
+      <p>Trending</p>
+    </div>
+    <div class="filter">
+      <a class="size" href="/category/Cottage"><i class="fa-solid fa-house-chimney"></i></a>
+      <p>Cottage</p>
+    </div>
+    <div class="filter">
+      <a class="size" href="/category/New"><i class="fa-solid fa-bolt"></i></a>
+      <p>New</p>
+    </div>
+    <div class="filter">
+      <a class="size" href="/category/Boating"><i class="fa-solid fa-ship"></i></a>
+      <p>Boating</p>
+    </div>
+    <div class="filter">
+      <a class="size" href="/category/Beachfront"><i class="fa-solid fa-umbrella-beach"></i></a>
+      <p>Beachfront</p>
+    </div>
+    <div class="filter">
+      <a class="size" href="/category/Countryside"><i class="fa-solid fa-city"></i></a>
+      <p>Countryside</p>
+    </div>
+    <div class="filter">
+      <a class="size" href="/category/Party"><i class="fa-solid fa-champagne-glasses"></i></a>
+      <p>Party</p>
+    </div>
+    <div class="filter">
+      <a class="size" href="/category/Treehouses"><i class="fa-solid fa-tree-city"></i></i> </a>
+      <p>Treehouses</p>
+    </div>
+    <div class="filter">
+      <a class="size" href="/category/Castles"><i class="fa-brands fa-fort-awesome"></i></a> 
+      <p>Castles</p>
+    </div>
+    <div class="filter">
+      <a class="size" href="/category/Farms"><i class="fa-solid fa-cow"></i> </a>
+      <p>Farms</p>
+    </div>
+    <div class="filter">
+      <a class="size" href="/category/Artic"><i class="fa-solid fa-snowflake"></i></i> </a>
+      <p>Artic</p>
+    </div>
+    <div class="filter">
+      <a class="size" href="/category/Swimming"><i class="fa-solid fa-water-ladder"></i> </a>
+      <p>Swimming</p>
+    </div>
+    <div class="filter">
+      <a class="size" href="/category/Ocean"><i class="fa-solid fa-water"></i> </a>
+      <p>Ocean</p>
+    </div>
+    </div>
+
+  <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 mt-3">
+      <% for(let listing of allListings) { %>  
+      <a href="/listings/<%= listing._id %>" class="listing-links">
+        <div class="card col listing-card">
+        <img src="<%= listing.image.url %>" class="card-img-top" alt="Listing_image" style = "height: 35rem;">
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text">
+            <b><%= listing.title %></b> <br>
+            &#8377;<%= listing.price.toLocaleString("en-IN") %> / night
+          </p>
+        </div>
+      </div>
+      </a>
+      <% } %>
+  </div>
+
