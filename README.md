@@ -2,6 +2,7 @@
 A full-stack web application that replicates the core features of Airbnb — property listings, booking management, and user authentication.
 
 Features
+
 🏠 Property Listings – Add, view, and manage property details
 
 🔐 User Authentication – Secure login/signup with sessions
